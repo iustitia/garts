@@ -2,14 +2,83 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-<div class="container">
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">German Articles</div>
 
-    <a href="/wordbrowser/">Wordbrowser</a>
-    <a href="/lesson/1">Lessons</a>
-    <a href="http://garts.pythonanywhere.com/">http://garts.pythonanywhere.com/</a>
-</div>
-</div>
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>Naucz się niemieckich rodzajników!</h1>
+             <p><a href="http://garts.pythonanywhere.com/">http://garts.pythonanywhere.com/</a></p>
+             <p><a href="/wordbrowser/" class="btn btn-primary btn-large">Start!</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Działy</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Homonimy</h3>
+                        <p>Słowa o identycznym brzmieniu, ale o różnym znaczeniu.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">"Start"!</a> <a href="#" class="btn btn-default">Więcej</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Stałe końcówki</h3>
+                        <p>Rzeczowniki z końcówkami: "-ung", "-ie", "-er", "-tion", itd.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">Więcej</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Działy tematyczne</h3>
+                        <p>Rodzajniki dla mórz, rzek, gór, itd.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">Więcej</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Słowniczek</h3>
+                        <p>Sprawdź znaczenie słowa i jego rodzajnik. Porównaj homonimy.</p>
+                        <p>
+                            <a href="/wordbrowser/" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">Więcej</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
 {% endblock %}
