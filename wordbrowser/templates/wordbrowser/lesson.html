@@ -26,13 +26,17 @@
                     <div class="caption">
                         <h3>{{ word.name }}</h3>
                         <p>
-                            <a href="#" class="btn btn-default">Der</a> <a href="#" class="btn btn-default" id="cor" onclick="correct()">Die</a>
-                            <a href="#" class="btn btn-default">Das</a>
+                            <a href="#" class="btn btn-default" id="wro" onclick="wrong()">Der</a> <a href="#" class="btn btn-default" id="cor" onclick="correct()">Die</a>
+                            <a href="#" class="btn btn-default" id="wro" onclick="wrong()">Das</a>
                         </p>
 
                         <script>
                         function correct() {
                             document.getElementById("cor").className = "btn btn-success";
+                        }
+                        function wrong() {
+                            document.getElementById("wro").className = "btn btn-danger";
+                            correct();
                         }
                         </script>
                     <!-- </div>
