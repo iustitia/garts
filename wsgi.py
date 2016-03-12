@@ -261,14 +261,12 @@ $ git push</pre>
                 </p>
 
                 <h2>Development Resources</h2>
-                  <ul>
-                    <li><a href="https://developers.openshift.com/en/python-overview.html">Getting Started with Python on OpenShift</a></li>
-                    <li><a href="https://developers.openshift.com">Developer Center</a></li>
-                    <li><a href="https://www.openshift.com/user-guide">User Guide</a></li>
-                    <li><a href="https://help.openshift.com">Help Center</a></li>
-                    <li><a href="http://stackoverflow.com/questions/tagged/openshift">Stack Overflow questions for OpenShift</a></li>
-                    <li><a href="http://git-scm.com/documentation">Git documentation</a></li>
-                  </ul>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                        <span class="sr-only">20% Complete</span>
+                    </div>
+                </div>
+                <p>Changed.</p>
 
 
           </section>
