@@ -1,0 +1,31 @@
+
+{% extends 'wordbrowser/base.html' %}
+
+{% block content %}
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Wordbrowser</div>
+
+  <!-- Table -->
+  <table class="table">
+      <tr>
+      <th>ID</th>
+      <th>Article</th>
+      <th>Word</th>
+      <th>Extras</th>
+      </tr>
+      {% for word in wordlist %}
+
+        <tr>
+            <td>{{ word.id }}</td>
+            <td>{{ word.article }}</td>
+            <td><a href="/wordbrowser/{{ word.id }}">{{ word.name }}</a></td>
+            <td>{{ word.extra }}</td>
+        </tr>
+      {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

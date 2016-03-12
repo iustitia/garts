@@ -1,0 +1,20 @@
+{% extends 'wordbrowser/base.html' %}
+
+{% block content %}
+
+
+           <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>{{ word.article }} {{ word.name }}</h3>
+                        <p>id: {{ word.id }}</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Category</a> <a href="#" class="btn btn-default">Article "{{ word.article }}"</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+{% endblock %}
