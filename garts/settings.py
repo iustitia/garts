@@ -25,7 +25,7 @@ SECRET_KEY = '*r*5@!5ehkbvpp5p0de!w-*9@+pf325beqkppcy2xmw^ubt&d^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rhcloud.com']
+ALLOWED_HOSTS = ['.rhcloud.com']
 
 
 # Application definition
