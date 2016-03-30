@@ -110,4 +110,4 @@ STATIC_URL = '/static/'
 #    '/var/www/static/',
 #)
 
-STATIC_ROOT = '$OPENSHIFT_REPO_DIR/wsgi/static'
+STATIC_ROOT = '/static/'
