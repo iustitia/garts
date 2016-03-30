@@ -25,7 +25,7 @@ SECRET_KEY = '*r*5@!5ehkbvpp5p0de!w-*9@+pf325beqkppcy2xmw^ubt&d^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.rhcloud.com']
+ALLOWED_HOSTS = ['.rhcloud.com', '127.0.0.1']
 
 
 # Application definition
@@ -105,9 +105,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
-)
+#STATIC_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+#    '/var/www/static/',
+#)
 
-STATIC_ROOT = '/var/www/garts/static/'
+STATIC_ROOT = '$OPENSHIFT_REPO_DIR/wsgi/static'
