@@ -7,9 +7,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'py',
-        'USER': os.environ['PGUSER'],
-        'PASSWORD': os.environ['PGPASSWORD'],
-        'PORT': os.environ['PGPORT'],
+        'USER': os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME'],
+        'PASSWORD': os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD'],
+        'PORT': os.environ['OPENSHIFT_POSTGRESQL_DB_PORT'],
         'HOST': os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
     }
 }
