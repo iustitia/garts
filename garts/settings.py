@@ -110,4 +110,4 @@ STATIC_URL = '/static/'
 #    '/var/www/static/',
 #)
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'static')
