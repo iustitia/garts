@@ -12,9 +12,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+if os.environ['HOME'] == '/home/iustitia':
+    print('dev')
+    from .setts.dev import *
+else:
+    from .setts.prod import *
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -23,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*r*5@!5ehkbvpp5p0de!w-*9@+pf325beqkppcy2xmw^ubt&d^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 
 ALLOWED_HOSTS = ['.rhcloud.com', '127.0.0.1']
 
@@ -77,13 +81,13 @@ WSGI_APPLICATION = 'garts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'py',
-        'USER': 'iustitia'
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'py',
+#        'USER': 'iustitia'
+#    }
+#}
 
 
 # Internationalization
@@ -110,4 +114,4 @@ STATIC_URL = '/static/'
 #    '/var/www/static/',
 #)
 
-STATIC_ROOT = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'static')
+#STATIC_ROOT = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'static')
