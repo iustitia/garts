@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python "$OPENSHIFT_REPO_DIR"wsgi/garts/manage.py collectstatic --noinput
+python "$OPENSHIFT_REPO_DIR"manage.py collectstatic --noinput
