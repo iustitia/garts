@@ -1,5 +1,3 @@
-
-print("in dev")
 STATIC_ROOT = '/static/'
 
 DEBUG = True

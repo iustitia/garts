@@ -15,7 +15,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 if os.environ['HOME'] == '/home/iustitia':
-    print('dev')
     from .setts.dev import *
 else:
     from .setts.prod import *
