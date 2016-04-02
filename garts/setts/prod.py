@@ -9,6 +9,7 @@ DATABASES = {
         'NAME': 'py',
         'USER': os.environ['PGUSER'],
         'PASSWORD': os.environ['PGPASSWORD'],
-        'PORT': os.environ['PGPORT']
+        'PORT': os.environ['PGPORT'],
+        'HOST': os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
     }
 }
