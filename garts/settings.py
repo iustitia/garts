@@ -33,8 +33,8 @@ INSTALLED_APPS = (
     'wordbrowser',
     'lesson',
     'home',
-    'quiz',
-    'multichoice',
+    #'quiz',
+    #'multichoice',
     #'true_false',
     #'essay'
 )
