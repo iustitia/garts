@@ -64,3 +64,6 @@ target/
 # temporary files
 *~
 
+# key
+
+garts/setts/key.yaml

@@ -15,5 +15,3 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'garts.settings'
 ## then, for django >=1.5:
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-
-
