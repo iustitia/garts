@@ -18,11 +18,6 @@ else:
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-with open('setts/key.yaml', 'r') as y:
-    doc = yaml.load(y)
-
-SECRET_KEY = doc['key']
-
 ALLOWED_HOSTS = ['.rhcloud.com', '127.0.0.1']
 
 

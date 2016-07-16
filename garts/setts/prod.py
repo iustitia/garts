@@ -13,3 +13,5 @@ DATABASES = {
         'HOST': os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
     }
 }
+
+SECRET_KEY = os.environ['key']
