@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wordbrowser/', include('wordbrowser.urls')),
-    url(r'^lesson/', include('lesson.urls'))
+    url(r'^lesson/', include('lesson.urls')),
+    url(r'^quiz/', include('quiz.urls'))
 ]
