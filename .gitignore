@@ -67,3 +67,7 @@ target/
 # key
 
 garts/setts/key.yaml
+
+# db
+
+db
