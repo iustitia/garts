@@ -8,6 +8,12 @@
 
 {% block content %}
 <script>
+$(function() {
+    console.log( "ready!" );
+    recalculate_progress({{ progress.0}}, {{ progress.1 }})
+});
+
+
 function removeAns() {
     document.getElementById("next").style.visibility = "visible";
     document.getElementById("previous_div").remove();
@@ -15,14 +21,13 @@ function removeAns() {
 
 function recalculate_progress(q, n){
 	var progress = (q/n) * 100;
-	console.log(progress);
-	console.log(progress.toString().concat("%"));
 	document.getElementById("pr_bar").style.width = progress.toString().concat("%");
-}
+	}
+
 </script>
 
 <div class="progress">
-    <div id="pr_bar" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    <div id="pr_bar" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%">
     </div>
 </div>
 
@@ -72,7 +77,7 @@ function recalculate_progress(q, n){
             {{ answer }}
           </a>
         {% endfor %}
-
+        <p>{{ progress }}</p>
       <input style="hidden" type="submit" value={% trans "Check" %} class="btn btn-large btn-block btn-warning" onclick="recalculate_progress({{ progress.0|add:1 }}, {{ progress.1 }})">
     </form>
 
