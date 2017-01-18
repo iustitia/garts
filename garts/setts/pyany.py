@@ -2,7 +2,7 @@ import yaml
 
 STATIC_ROOT = '/static/'
 
-DEBUG = True
+DEBUG = False
 
 DATABASES = {
     'default': {
