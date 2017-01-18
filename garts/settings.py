@@ -10,6 +10,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 if os.environ['HOME'] == '/home/iustitia':
     from .setts.dev import *
+elif os.environ['HOME'] == '/home/germanarticles':
+    from .setts.pyany import *
 else:
     from .setts.prod import *
 

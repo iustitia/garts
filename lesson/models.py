@@ -14,6 +14,9 @@ class Word(models.Model):
                                blank=True,
                                null=True,
                                verbose_name=_("Figure"))
+    rank_in_tops = models.IntegerField(null=True, default=-1)
+    rank_in_dict = models.IntegerField(null=True, default=-1)
+    source = models.CharField(max_length=150, default='Not set')
 
     def save(self, *args, **kwargs):
         is_new = not self.id
