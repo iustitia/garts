@@ -12,7 +12,7 @@ DATABASES = {
     }
 }
 
-with open('home/germanarticles/garts/setts/key.yaml', 'r') as y:
+with open('home/germanarticles/garts/garts/setts/key.yaml', 'r') as y:
     doc = yaml.load(y)
 
 SECRET_KEY = doc['key']
