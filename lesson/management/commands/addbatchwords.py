@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = "Add batch words from specified file."
 
     def handle(self, *args, **options):
-        sourcefile = '/home/iustitia/workspace/random/data/top_articled.txt'
+        sourcefile = '/home/germanarticles/data/top_articled.txt'
 
         with open(sourcefile, 'r') as f:
             content = f.readlines()
