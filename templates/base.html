@@ -44,9 +44,25 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li class="navbar-right">
+                        <a href="#">Login</a>
+                    </li>
                 </ul>
+                <div class="collapse navbar-collapse nav navbar-right">
+                {% if user.is_authenticated %}
+                    <ul class="nav navbar-nav">
+                        <li><a>Hello, {{ user.username }}</a></li>
+                        <li><a href="/logout/">Wyloguj</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="nav navbar-nav">
+                        <li><a href="/login/">Zaloguj</a></li>
+                    </ul>
+                {% endif %}
+            </div>
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>
