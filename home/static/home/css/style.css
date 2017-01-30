@@ -1,0 +1,22 @@
+/* For small screen */
+
+.row .correct {
+        background: #DFF0D8;
+    }
+    .row .wrong {
+        background: #F2DEDE;
+    }
+/* For medium screen */
+@media (min-width: 768px) {
+    .row .correct {
+        background: #DFF0D8;
+    }
+    .row .wrong {
+        background: #F2DEDE;
+    }
+}
+
+/* For large screen */
+@media (min-width: 992px) {
+
+}
