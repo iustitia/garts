@@ -1,28 +1,26 @@
 {% load i18n %}
+
 {% if previous.answers %}
+    <div class="row text-center">
 
-  {% if user_was_incorrect %}
-    <div class="alert alert-error">
-  	  <strong>{% trans "You answered the above question incorrectly" %}</strong>
-    </div>
-  {% endif %}
-
-  <div class="row">
-  	  {% for answer in previous.answers %}
-        {% if answer.correct %}
-  	    <div class="alert correct col-md-3">
-  		  {{ answer.content }}
+		<div id="tick" class="col-md-1 ">
+	  {% if user_was_incorrect %}
+		  <i class="fa fa-close"></i>
+		{% else %}
+		  <i class="fa fa-check"></i>
+	  {% endif %}
 		</div>
-        {% else %}
-      	  <div class="alert col-md-3">{{ answer.content }}
 
-  			{% if previous.question_type.ArticleQuestion %}
-  			  {% if answer.id|add:"0" == previous.previous_answer|add:"0" %}
-  			    {% trans "This was your answer." %}
-  			  {% endif %}
-  			{% endif %}
-  		  </div>
-  	  {% endif %}
-  	{% endfor %}
-  </div>
+		{% for answer in previous.answers %}
+        	{% if answer.correct %}
+        	<div id="correct" class="col-md-2 correct">{{ answer.content }}</div>
+			{% endif %}
+		{% endfor %}
+
+		{% if user_was_incorrect %}
+        <div id="user-answer" class="col-md-2 wrong">
+		{% else %}
+		<div id="user-answer" class="col-md-2 correct">
+		{% endif %}
+
 {% endif %}

@@ -2,9 +2,13 @@
 
 .row .correct {
         background: #DFF0D8;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     .row .wrong {
         background: #F2DEDE;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 /* For medium screen */
 @media (min-width: 768px) {

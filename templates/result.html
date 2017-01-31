@@ -8,9 +8,36 @@
 
 {% block content %}
 
+  {% if max_score %}
+
+    <br>
+    <h2>{% trans "Results" %} - <strong>{{ quiz.title }}</strong> Quiz</h2>
+
+    <p class="lead">
+        {% trans "You answered" %} {{ score }} {% trans "questions correctly out of" %} {{ max_score }}, {% trans "giving you" %} {{ percent }} {% trans "percent correct" %}
+    </p>
+    <br/>
+    <div class="input-group">
+        <span class="input-group-addon btn-success btn-large"><i class="fa fa-check"></i></span>
+        <p class="form-control">{% trans "Correct Answers" %}: {{ score }}</p>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon btn-large"><i class="fa fa-percent"></i></span>
+        <p class="form-control">{% trans "Accuracy" %}: {{ percent }}</p>
+    </div>
+    <br/>
+  {% endif %}
+
+  {% if quiz.pass_mark %}
+    <hr>
+    <p class="lead">{{ sitting.result_message }}</p>
+    <hr>
+  {% endif %}
+  <hr>
+
   {% if previous.answers %}
 
-  <p class="muted"><small>{% trans "The previous question" %}:</small></p>
   <p>{{ previous.previous_question }}</p>
   <p>Your answer was
 	<strong>
@@ -21,46 +48,6 @@
   <hr>
 
   {% endif %}
-
-  {% if max_score %}
-
-  <div>
-	<h2>{% trans "Exam results" %}</h2>
-	<p>
-	  <small class="muted">{% trans "Exam title" %}: </small>
-	  <strong>{{ quiz.title }}</strong></p>
-
-	<p class="lead">
-	  {% trans "You answered" %} {{ score }} {% trans "questions correctly out of" %} {{ max_score }}, {% trans "giving you" %} {{ percent }} {% trans "percent correct" %}
-	</p>
-
-        <div class="col-xs-6 col-md-3">
-
-            <div class="panel status panel-success">
-                <div class="panel-heading">
-                    <h1 class="panel-title text-center">{{ score }}</h1>
-                </div>
-                <div class="panel-body text-center">
-                    <strong>Tomorrow</strong>
-                </div>
-            </div>
-
-
-        </div>
-	{% if quiz.pass_mark %}
-	<hr>
-        <p class="lead">{{ sitting.result_message }}</p>
-	<hr>
-
-	{% endif %}
-
-  </div>
-
-
-  {% endif %}
-
-
-  <hr>
 
   {% if possible %}
 
@@ -73,23 +60,32 @@
   {% endif %}
 
   {% if questions %}
-
+    <ul id="list-answer" class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-md-1 "></div>
+                <div class="col-md-2 ">{% trans "Correct article" %}</div>
+                <div class="col-md-2 ">{% trans "Your answer" %}</div>
+            </div>
+        </li>
     {% for question in questions %}
 
-      <p class="lead">
-		{{ question.content }}
-	  </p>
+        <li class="list-group-item"">
+            <div>
+                <h3>{{ question.content }}</h3>
+            </div>
 
 	  {% correct_answer_for_all question %}
 
       {% if question.user_answer %}
-      <p>{% trans "Your answer" %}: {{ question|answer_choice_to_string:question.user_answer }}</p>
+      {{ question|answer_choice_to_string:question.user_answer }}
       {% endif %}
-
-	  <hr>
+            </div> <!-- #user-answer -->
+            </div> <!-- .row -->
+       </li> <!-- .thumbnail -->
 
   {% endfor %}
-
+    </ul> <!-- #list-answer -->
   {% endif %}
 
 
