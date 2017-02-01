@@ -58,37 +58,41 @@ function recalculate_progress(q, n){
 {% endif %}
 
 {% if question %}
+<div class="container">
 <div class="row text-center">
 <header class="jumbotron hero-spacer">
     {% if previous.answers %}
         <div id="next" style="visibility: hidden;">
     {% endif %}
 
-
-    <p class="lead">{{ question.content }}</p>
+    <h1 class="lead">{{ question.content }}</h1>
 
     {% if question.figure %}
         <img src="{{ question.figure.url }}" alt="{{ question.content }}" />
     {% endif %}
 
-    <form action="" method="POST">{% csrf_token %}
-
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
         {% for answer in form.answers %}
           <a class="btn btn-default">
             {{ answer }}
           </a>
         {% endfor %}
-      <input style="hidden" type="submit" value={% trans "Check" %} class="btn btn-large btn-block btn-warning" onclick="recalculate_progress({{ progress.0|add:1 }}, {{ progress.1 }})">
+        </div>
+        <br/>
+        <div class="form-group">
+            <input type="submit" value={% trans "Check" %} class="btn btn-large btn-primary" onclick="recalculate_progress({{ progress.0|add:1 }}, {{ progress.1 }})">
+        </div>
     </form>
-
 </header>
+</div>
 </div>
 {% endif %}
 
         {% if previous.answers %}
  </div>
         {% endif %}
-<hr>
 
 
 {% endblock %}

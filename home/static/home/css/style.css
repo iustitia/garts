@@ -24,3 +24,9 @@
 @media (min-width: 992px) {
 
 }
+
+footer {
+    margin-top: 60px;
+}
+
+body { padding-bottom: 70px; }
