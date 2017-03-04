@@ -1,10 +1,6 @@
 # garts - German ARTicleS
 
-
-todo:
-- import all data
-- make quiz, show if answer correct
-- generate quizes for different categories
-- upload pictures for data
-- make quiz for different case, definite/undefinite article
-- language versions pl/en/de
+This project is Django webapp for learning learning articles for german nouns like:
+der / ~~die~~ / ~~das~~ Hund
+~~der~~ / die / ~~das~~ Katze
+~~der~~ / ~~die~~ / das Kind
