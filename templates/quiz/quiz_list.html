@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "All Quizzes" %}{% endblock %}
+
+{% block content %}
+<div class="panel panel-default">
+
+
+<div class="container">
+	<h2>{% trans "Start a quiz" %}</h2>
+	<a class="btn btn-default" href="/get_quiz/">Get random quiz!</a>
+</div>
+
+<div class="container">
+	<h2>{% trans "List of quizzes" %}</h2>
+    {% if quiz_list %}
+		<table class="table table-bordered table-striped">
+
+		  <thead>
+			<tr>
+			  <th>{% trans "Title" %}</th>
+			  <th></th>
+			</tr>
+		  </thead>
+
+		  <tbody>
+
+        {% for quiz in quiz_list %}
+
+  			<tr>
+			  <td>{{ quiz.title }}</td>
+			  <td>
+				<a href="{% url 'quiz_question' quiz_name=quiz.url %}">
+				  {% trans "Start quiz" %}
+				</a>
+			</tr>
+
+        {% endfor %}
+		  </tbody>
+
+		</table>
+
+	{% else %}
+        <p>{% trans "There are no available quizzes" %}.</p>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

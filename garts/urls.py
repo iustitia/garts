@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wordbrowser/', include('wordbrowser.urls')),
-    url(r'^lesson/', include('lesson.urls')),
+    url(r'', include('lesson.urls')),
     url(r'^quiz/', include('quiz.urls')),
     url(r'^login', auth_views.login, name='login'),
     url(r'^logout', auth_views.logout, name='logout', kwargs={'next_page': '/'})
