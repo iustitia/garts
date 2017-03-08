@@ -17,13 +17,29 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from home import views
 from django.contrib.auth import views as auth_views
+from quiz.views import QuizListView, QuizUserProgressView
+from lesson.views import QuizView
+
+quiz_urls = ([
+    url(regex=r'^$',
+        view=QuizListView.as_view(),
+        name='quiz_index'),
+
+    url(regex=r'^progress/$',
+        view=QuizUserProgressView.as_view(),
+        name='quiz_progress'),
+
+    url(regex=r'^(?P<quiz_name>[\w-]+)/take/$',
+        view=QuizView.as_view(),
+        name='quiz_question'),
+])
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wordbrowser/', include('wordbrowser.urls')),
     url(r'', include('lesson.urls')),
-    url(r'^quiz/', include('quiz.urls')),
+    url(r'^quiz/', include(quiz_urls)),
     url(r'^login', auth_views.login, name='login'),
     url(r'^logout', auth_views.logout, name='logout', kwargs={'next_page': '/'})
 ]
