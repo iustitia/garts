@@ -36,6 +36,7 @@ quiz_urls = ([
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^about$', views.about, name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wordbrowser/', include('wordbrowser.urls')),
     url(r'', include('lesson.urls')),
