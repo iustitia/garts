@@ -8,7 +8,17 @@
 
 <div class="container">
 	<h2>{% trans "Start a quiz" %}</h2>
-	<a class="btn btn-default" href="/get_quiz/">Get random quiz!</a>
+	<div class="row">
+		<div class="col-md-6">
+		<a class="btn btn-success btn-lg btn-block" href="/get_quiz/"><span class="glyphicon glyphicon-play"></span> Get random quiz!</a>
+		<a class="btn btn-default btn-lg btn-block" a href="/quiz/top10/take/">Most popular words</a>
+		</div>
+	</div>
+	<div class="col-md-2">
+			<h3>Other quizes:</h3>
+			<a class="btn btn-default btn-block" a href="/get_quiz/5/">Short quiz</a>
+			<a class="btn btn-default btn-block" a href="/get_quiz/30/">Long quiz</a>
+	</div>
 </div>
 
 <div class="container">

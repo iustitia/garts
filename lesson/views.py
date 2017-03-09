@@ -24,6 +24,7 @@ def make_quiz(request, random=True, count=10):
     name = uuid.uuid4().hex[:10]
     q = Quiz(title=name, url=name, category=Category.objects.first(), random_order=True, answers_at_end=True, exam_paper=True, single_attempt=True)
     q.save()
+    count = int(count)
     questions = [randint(1,170) for _ in range(count)]
     q.question_set = questions
     out = redirect('/quiz/' + name + '/take/')
