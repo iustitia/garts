@@ -20,13 +20,14 @@
     }
 }
 
-/* For large screen */
-@media (min-width: 992px) {
-
-}
-
 footer {
     margin-top: 60px;
 }
 
-body { padding-bottom: 70px; }
+body {
+    padding-bottom: 70px;
+}
+
+.container.extra-bottom-padding{
+   margin-bottom: 30px;
+}

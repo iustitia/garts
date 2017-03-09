@@ -6,7 +6,7 @@
 <div class="panel panel-default">
 
 
-<div class="container">
+<div class="container extra-bottom-padding">
 	<h2>{% trans "Start a quiz" %}</h2>
 	<div class="row">
 		<div class="col-md-6">
@@ -22,9 +22,10 @@
 </div>
 
 <div class="container">
-	<h2>{% trans "List of quizzes" %}</h2>
+	<h2>{% trans "List of available quizzes" %}:</h2>
     {% if quiz_list %}
-		<table class="table table-bordered table-striped">
+	<div class="row"><div class="col-md-6">
+		<table class="table table-striped">
 
 		  <thead>
 			<tr>
@@ -49,7 +50,7 @@
 		  </tbody>
 
 		</table>
-
+	</div></div>
 	{% else %}
         <p>{% trans "There are no available quizzes" %}.</p>
     {% endif %}
