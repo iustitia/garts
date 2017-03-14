@@ -71,3 +71,8 @@ garts/setts/key.yaml
 # db
 
 db
+
+# dirs
+
+static/
+uploads/
