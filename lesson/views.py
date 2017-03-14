@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from .models import Word
 from quiz.models import Quiz, Category, Progress
 from quiz.views import QuizTake
 import uuid
 from random import randint
+from .forms import RegistrationForm
 
 
 def index(request):
@@ -58,3 +59,14 @@ class QuizView(QuizTake):
             self.quiz.delete()
 
         return out
+
+
+def register(request):
+    if request.method == 'POST':
+        uf = RegistrationForm(request.POST, prefix='user')
+        if uf.is_valid():
+            user = uf.save()
+            return redirect('/login')
+    else:
+        uf = RegistrationForm(prefix='user')
+    return render(request, 'register.html', {'form': uf})

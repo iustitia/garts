@@ -2,10 +2,25 @@
 {% load i18n %}
 
 {% block content %}
+<div class="col-md-7">
 <h2>{% trans "Sign up" %}</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
+</div>
+<div class="col-md-3">
+    <div class="alert alert-info"><strong>Language level:</strong><br> Estimate your language level according to <a href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages">CEFR.</a>
+    Rough estimate would be:
+    <ul>
+        <li>A1 - Beginner</li>
+        <li>A2 - Elementary</li>
+        <li>B1 - Independent user / Intermediate</li>
+        <li>B2 - Upper Intermediate / Fluent</li>
+        <li>C1 - Proficient User</li>
+    </ul>
+    </div>
+</div>
+
 {% endblock %}
