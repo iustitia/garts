@@ -13,7 +13,7 @@ choices = (('A1', 'A1'),
 
 
 class RegistrationForm(UserCreationForm):
-    languagelevel = forms.ChoiceField(choices=choices, label="German language level" ,help_text='Language level according to CEFR ->')
+    languagelevel = forms.ChoiceField(choices=choices, label="German language level", help_text='Language level according to CEFR ->')
     native = forms.ChoiceField(choices=settings.LANGUAGES, label="Native language")
     email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
     source = forms.CharField(max_length=254, required=False, label="Where have you heard about this site?")

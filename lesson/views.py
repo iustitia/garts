@@ -5,6 +5,7 @@ from quiz.views import QuizTake
 import uuid
 from random import randint
 from .forms import RegistrationForm
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -20,7 +21,7 @@ def lesson(request, word_id):
 
     out = render(request, 'lesson/lesson.html', context)
 
-
+@login_required
 def make_quiz(request, random=True, count=10):
     name = uuid.uuid4().hex[:10]
     q = Quiz(title=name, url=name, category=Category.objects.first(), random_order=True, answers_at_end=True, exam_paper=True, single_attempt=True)
@@ -34,6 +35,7 @@ def make_quiz(request, random=True, count=10):
 
 
 class QuizView(QuizTake):
+    @login_required
     def form_valid_user(self, form):
         progress, c = Progress.objects.get_or_create(user=self.request.user)
         guess = form.cleaned_data['answers']
