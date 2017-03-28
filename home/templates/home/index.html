@@ -1,14 +1,23 @@
 
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n static %}
 
 {% block content %}
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
             <h1>{% trans "Learn German Articles!" %}</h1>
-            <p><a href="/quiz/" class="btn btn-primary btn-large">Quiz</a></p>
-            <p><a href="/wordbrowser/" class="btn btn-primary btn-large">{%  trans "Words" %}</a></p>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 hero-feature">
+                    <p><a href="/quiz/" class="btn btn-primary btn-large">Quiz</a></p>
+                    <p><a href="/wordbrowser/" class="btn btn-primary btn-large">{%  trans "Words" %}</a></p>
+                </div>
+                <div class="col-md-5 col-sm-3 hero-feature">
+
+                    <img src="{% static 'home/media/quiz_progress2.png' %}" class="img-thumbnail" width="662" height="501">
+
+                </div>
+            </div>
         </header>
 
         <hr>
