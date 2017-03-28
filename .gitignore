@@ -76,3 +76,7 @@ db
 
 static/
 uploads/
+
+db.db
+
+keyadd.sh
