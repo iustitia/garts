@@ -35,7 +35,6 @@ def make_quiz(request, random=True, count=10):
 
 
 class QuizView(QuizTake):
-    @login_required
     def form_valid_user(self, form):
         progress, c = Progress.objects.get_or_create(user=self.request.user)
         guess = form.cleaned_data['answers']

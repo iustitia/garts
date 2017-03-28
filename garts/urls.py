@@ -23,15 +23,15 @@ from lesson.views import QuizView, register
 
 quiz_urls = ([
     url(regex=r'^$',
-        view=QuizListView.as_view(),
+        view=login_required(QuizListView.as_view()),
         name='quiz_index'),
 
     url(regex=r'^progress/$',
-        view=QuizUserProgressView.as_view(),
+        view=login_required(QuizUserProgressView.as_view()),
         name='quiz_progress'),
 
     url(regex=r'^(?P<quiz_name>[\w-]+)/take/$',
-        view=QuizView.as_view(),
+        view=login_required(QuizView.as_view()),
         name='quiz_question'),
 ])
 
@@ -41,7 +41,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wordbrowser/', include('wordbrowser.urls')),
     url(r'', include('lesson.urls')),
-    url(r'^quiz/', login_required(include(quiz_urls))),
+    url(r'^quiz/', include(quiz_urls)),
     url(r'^login', auth_views.login, name='login'),
     url(r'^logout', auth_views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^register/', register),
