@@ -16,8 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
-from home import views
 from django.contrib.auth import views as auth_views
+from django.conf.urls.i18n import i18n_patterns
+from home import views
 from quiz.views import QuizListView, QuizUserProgressView
 from lesson.views import QuizView, register
 
@@ -36,9 +37,12 @@ quiz_urls = ([
 ])
 
 urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+]
+
+urlpatterns += i18n_patterns(
     url(r'^$', views.index, name='index'),
     url(r'^about$', views.about, name='about'),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^wordbrowser/', include('wordbrowser.urls')),
     url(r'', include('lesson.urls')),
     url(r'^quiz/', include(quiz_urls)),
@@ -46,4 +50,4 @@ urlpatterns = [
     url(r'^logout', auth_views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^register/', register),
     url(r'^accounts/', include('django.contrib.auth.urls'))
-]
+)

@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-29 09:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: garts/settings.py:91
+msgid "English"
+msgstr ""
+
+#: garts/settings.py:92
+msgid "Polish"
+msgstr ""
+
+#: home/templates/home/index.html:9
+msgid "Learn German Articles!"
+msgstr "Naucz się niemieckich rodzajników!"
+
+#: home/templates/home/index.html:13
+msgid "Words"
+msgstr "Słówka"
+
+#: home/templates/home/index.html:40
+msgid "Wordbrowser"
+msgstr "Lista słówek"
+
+#: home/templates/home/index.html:41
+msgid "Check the word article"
+msgstr ""
+
+#: home/templates/home/index.html:43 home/templates/home/index.html:56
+#: home/templates/home/index.html:69 home/templates/home/index.html:82
+msgid "More"
+msgstr "Więcej"
+
+#: home/templates/home/index.html:54
+msgid "Take a test and see how many articles you know"
+msgstr "Zrób test i zobacz ile znasz rodzajników"
+
+#: home/templates/home/index.html:66
+msgid "Stats"
+msgstr "Statystyki"
+
+#: home/templates/home/index.html:67
+msgid "See your progress"
+msgstr "Zobacz swoje postępy"
+
+#: lesson/models.py:16
+msgid "Figure"
+msgstr ""
+
+#: lesson/models.py:38
+msgid "Question"
+msgstr "Pytanie"
+
+#: templates/base.html:41
+msgid "About"
+msgstr "O projekcie"
+
+#: templates/base.html:47
+msgid "Hello"
+msgstr "Witaj"
+
+#: templates/base.html:48
+msgid "Log out"
+msgstr "Wyloguj się"
+
+#: templates/base.html:52
+msgid "Login"
+msgstr "Zaloguj się"
+
+#: templates/base.html:53
+msgid "Register"
+msgstr "Zarejestruj się"
+
+#: templates/question.html:37
+msgid "The previous question"
+msgstr ""
+
+#: templates/question.html:47
+msgid "Your answer was"
+msgstr ""
+
+#: templates/question.html:85
+msgid "Check"
+msgstr ""
+
+#: templates/quiz/quiz_list.html:3
+msgid "All Quizzes"
+msgstr ""
+
+#: templates/quiz/quiz_list.html:10
+msgid "Start a quiz"
+msgstr ""
+
+#: templates/quiz/quiz_list.html:25
+msgid "List of available quizzes"
+msgstr "Lista dostępnych quizów"
+
+#: templates/quiz/quiz_list.html:32
+msgid "Title"
+msgstr "Tytuł"
+
+#: templates/quiz/quiz_list.html:45
+msgid "Start quiz"
+msgstr "Rozpocznij quiz"
+
+#: templates/quiz/quiz_list.html:55
+msgid "There are no available quizzes"
+msgstr "Nie ma żadnych dostępnych quizów"
+
+#: templates/register.html:6
+msgid "Sign up"
+msgstr "Zapisz się"
+
+#: templates/result.html:7
+msgid "Exam Results for"
+msgstr ""
+
+#: templates/result.html:14
+msgid "Results"
+msgstr "Wyniki"
+
+#: templates/result.html:17
+msgid "You answered"
+msgstr "Odpowiedział(e/a)ś poprawnie na"
+
+#: templates/result.html:17
+msgid "questions correctly out of"
+msgstr "pytań z"
+
+#: templates/result.html:17
+msgid "giving you"
+msgstr "co daje Ci"
+
+#: templates/result.html:17
+msgid "percent correct"
+msgstr "% poprawnych"
+
+#: templates/result.html:22
+msgid "Correct Answers"
+msgstr "Poprawne odpowiedzi"
+
+#: templates/result.html:27
+msgid "Accuracy"
+msgstr "Dokładność"
+
+#: templates/result.html:55
+msgid "Your session score is"
+msgstr "Twój wynik w sesji"
+
+#: templates/result.html:55
+msgid "out of a possible"
+msgstr "z możliwych"
+
+#: templates/result.html:67
+msgid "Correct article"
+msgstr "Poprawny rodzajnik"
+
+#: templates/result.html:68
+msgid "Your answer"
+msgstr "Twoja odpowiedź"
