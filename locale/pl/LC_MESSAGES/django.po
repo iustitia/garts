@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 09:40+0200\n"
+"POT-Creation-Date: 2017-03-29 10:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,63 @@ msgstr ""
 #: garts/settings.py:92
 msgid "Polish"
 msgstr ""
+
+#: home/templates/home/about.html:5
+msgid "About the project"
+msgstr "O projekcie"
+
+#: home/templates/home/about.html:6
+msgid ""
+"Gender of german articles is not an easy thing to learn. This project helps "
+"in learning it, by letting you\n"
+"use quizes to memorize them."
+msgstr "Nauczenie się niemieckich rodzajników nie jest łatwą rzeczą. Ten projekt ma na celu "
+"pomoc w nauce, poprzez dostarczenie Ci quizów, w których "
+"możesz utrwalić i przetestować swoją wiedzę."
+
+#: home/templates/home/about.html:8
+msgid ""
+"Project stack: Application is written in Python with Django framework. Quiz "
+"logic is based on 'django_quiz' with\n"
+"    modifications and extensions."
+msgstr "Stos technologiczny projektu: aplikacja jest napisana w Pythonie z frameworkiem Django. Funkcja quizu "
+"jest oparta o bibliotekę 'django_quiz' z pewnymi modyfikacjami i rozszerzeniami."
+
+#: home/templates/home/about.html:10
+msgid "The whole project is open-source. You can find code at GitHub: "
+msgstr "Cały projekt jest open-source. Kod możesz znaleźć na Githubie: "
+
+#: home/templates/home/about.html:11
+msgid ""
+"Source for word list for this app is <a href=\"http://tatoeba.org/"
+"\">Tatoeba</a>, sorted by popularity."
+msgstr "Lista słów została przygotowana na podstawie <a href=\"http://tatoeba.org/"
+"\">Tatoeba</a>, z uwzględnieniem popularności występowania."
+
+#: home/templates/home/about.html:12
+msgid "You can use this site in personal and commercial purposes."
+msgstr "Możesz używać tej strony do użytku prywatnego i komercyjnego np. w szkołach językowych."
+
+#: home/templates/home/about.html:15
+msgid "About the author"
+msgstr "O autorce"
+
+#: home/templates/home/about.html:16
+msgid ""
+"Justyna Kubisztal - Python Developer, Django Girls co-organiser and mentor. "
+"Language enthusiast. Book worm.\n"
+"    Life-long learner. She writes a blog in Polish about programming: "
+msgstr "Justyna Kubisztal - Programistka Pythona, współorganizatorka i mentorka Django Girls. "
+"Entuzjastka języków obcych i książek.\n"
+"Bloguje o programowaniu na : "
+
+#: home/templates/home/about.html:18
+msgid "Find me on Twitter"
+msgstr "Znajdziesz mnie na Twitterze"
+
+#: home/templates/home/about.html:18
+msgid "or write me at"
+msgstr "lub napisz to mnie na"
 
 #: home/templates/home/index.html:9
 msgid "Learn German Articles!"
@@ -90,23 +147,23 @@ msgstr "Zarejestruj się"
 
 #: templates/question.html:37
 msgid "The previous question"
-msgstr ""
+msgstr "Poprzednie pytanie"
 
 #: templates/question.html:47
 msgid "Your answer was"
-msgstr ""
+msgstr "Twoja odpowiedź"
 
 #: templates/question.html:85
 msgid "Check"
-msgstr ""
+msgstr "Sprawdź"
 
 #: templates/quiz/quiz_list.html:3
 msgid "All Quizzes"
-msgstr ""
+msgstr "Wszystkie quizy"
 
 #: templates/quiz/quiz_list.html:10
 msgid "Start a quiz"
-msgstr ""
+msgstr "Rozpocznij quiz"
 
 #: templates/quiz/quiz_list.html:25
 msgid "List of available quizzes"
@@ -175,3 +232,6 @@ msgstr "Poprawny rodzajnik"
 #: templates/result.html:68
 msgid "Your answer"
 msgstr "Twoja odpowiedź"
+
+#~ msgid "Source for word list for this app is"
+#~ msgstr "Lista słów została sporządzona na podstawie "
