@@ -7,15 +7,16 @@
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
             <h1>{% trans "Learn German Articles!" %}</h1>
+
+            <div class="img-thumbnail">
+                <img src="{% static 'home/media/garts.png' %}" >
+            </div>
+            <br/>
+            <br/>
             <div class="row">
-                <div class="col-md-4 col-sm-6 hero-feature">
-                    <p><a href="/quiz/" class="btn btn-primary btn-large">Quiz</a></p>
-                    <p><a href="/wordbrowser/" class="btn btn-primary btn-large">{%  trans "Words" %}</a></p>
-                </div>
-                <div class="col-md-5 col-sm-3 hero-feature">
-
-                    <img src="{% static 'home/media/quiz_progress2.png' %}" class="img-thumbnail" width="662" height="501">
-
+                <div class="col-md-6 col-sm-6 hero-feature">
+                    <p><a href="/quiz/" class="btn btn-primary btn-large btn-block center">Quiz</a></p>
+                    <p><a href="/wordbrowser/" class="btn btn-primary btn-large btn-block">{%  trans "Words" %}</a></p>
                 </div>
             </div>
         </header>
@@ -40,7 +41,7 @@
                         <h3>{% trans "Wordbrowser"%}</h3>
                         <p>{% trans "Check the word article" %}</p>
                         <p>
-                            <a href="/wordbrowser/" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">{% trans "More" %}</a>
+                            <a href="/wordbrowser/" class="btn btn-primary  btn-block">Start!</a>
                         </p>
                     </div>
                 </div>
@@ -53,7 +54,7 @@
                         <h3>Quiz</h3>
                         <p>{% trans "Take a test and see how many articles you know" %}</p>
                         <p>
-                            <a href="/quiz/" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">{% trans "More" %}</a>
+                            <a href="/quiz/" class="btn btn-primary  btn-block">Start!</a>
                         </p>
                     </div>
                 </div>
@@ -66,26 +67,11 @@
                         <h3>{% trans "Stats" %}</h3>
                         <p>{% trans "See your progress" %}</p>
                         <p>
-                            <a href="#" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">{% trans "More" %}</a>
+                            <a href="#" class="btn btn-primary btn-block">Start!</a>
                         </p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Placeholder</h3>
-                        <p>Important stuff.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Start!</a> <a href="#" class="btn btn-default">{% trans "More" %}</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
 
         </div>
         <!-- /.row -->
