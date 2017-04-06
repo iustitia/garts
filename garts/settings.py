@@ -7,22 +7,37 @@ Django settings for garts project.
 import os
 from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import yaml
 
-if os.environ['HOME'] == '/home/iustitia':
-    from .setts.dev import *
-elif os.environ['HOME'] == '/home/germanarticles':
-    from .setts.pyany import *
-else:
-    from .setts.prod import *
+#if os.environ['HOME'] == '/home/iustitia':
+#    from .setts.dev import *
+#elif os.environ['HOME'] == '/home/germanarticles':
+#    from .setts.pyany import *
+#else:
+#    from .setts.prod import *
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+with open(os.path.join(BASE_DIR, 'garts', 'key.yaml'), 'r') as y:
+    doc = yaml.load(y)
 
-ALLOWED_HOSTS = ['.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = doc['ALLOWED_HOSTS']
+DEBUG = doc['DEBUG']
 
+ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 
+DATABASES = {
+    'default': {
+        'ENGINE': doc['DB_ENGINE'],
+        'NAME': doc.get('DB_NAME') or os.path.join(ENV_PATH, doc.get('DB_SQLITENAME')),
+        'USER': doc['DB_USER'],
+        'PASSWORD': doc.get('PASSWORD'),
+        'HOST': doc.get('DB_HOST'),
+        'PORT': doc.get('PORT')
+    }
+}
 # Application definition
 
 INSTALLED_APPS = (
