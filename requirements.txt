@@ -7,7 +7,6 @@ django-tagging>=0.4.5
 django-xmlrpc>=0.1.7
 docutils>=0.12
 mots-vides==2015.5.11
-Pillow==2.5.0
 pluggy==0.4.0
 py==1.4.32
 pyaml==16.12.2

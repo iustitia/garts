@@ -38,6 +38,8 @@ DATABASES = {
         'PORT': doc.get('PORT')
     }
 }
+SECRET_KEY = doc['key']
+
 # Application definition
 
 INSTALLED_APPS = (
