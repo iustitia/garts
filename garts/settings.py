@@ -26,7 +26,13 @@ with open(os.path.join(BASE_DIR, 'garts', 'key.yaml'), 'r') as y:
 ALLOWED_HOSTS = doc['ALLOWED_HOSTS']
 DEBUG = doc['DEBUG']
 
+STATIC_URL = doc['STATIC_URL']
+MEDIA_URL = doc['MEDIA_URL']
+
 ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+
+STATIC_ROOT = os.path.join(ENV_PATH, doc['STATIC_ROOT'])
+MEDIA_ROOT = os.path.join(ENV_PATH, doc['MEDIA_ROOT'])
 
 DATABASES = {
     'default': {
@@ -119,3 +125,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 LOGIN_REDIRECT_URL = '/'
+
+if not DEBUG:
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
