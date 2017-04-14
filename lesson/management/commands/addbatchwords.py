@@ -1,4 +1,4 @@
-import os
+import sys
 from django.core.management.base import BaseCommand
 from lesson.models import Word
 import argparse
@@ -8,9 +8,10 @@ class Command(BaseCommand):
     help = "Add batch words from specified file."
 
     def add_arguments(self, parser):
-        parser.add_argument('path', nargs=1, type=argparse.FileType('r'))
+        parser.add_argument('path', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
 
     def handle(self, *args, **options):
+        print(options)
         sourcefile = options['path']
 
         with open(sourcefile, 'r') as f:
