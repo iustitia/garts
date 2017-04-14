@@ -1,13 +1,17 @@
 import os
 from django.core.management.base import BaseCommand
 from lesson.models import Word
+import argparse
 
 
 class Command(BaseCommand):
     help = "Add batch words from specified file."
 
+    def add_arguments(self, parser):
+        parser.add_argument('path', nargs=1, type=argparse.FileType('r'))
+
     def handle(self, *args, **options):
-        sourcefile = '/home/germanarticles/data/top_articled.txt'
+        sourcefile = options['path']
 
         with open(sourcefile, 'r') as f:
             content = f.readlines()
