@@ -4,16 +4,21 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Log in</h1>
+            <h1>{% trans "Log in" %}</h1>
                 {% if form.errors %}
-                    <p>Your username and password didn't match. Please try again.</p>
+                    <p>{% trans "Your username and password didn't match. Please try again." %}</p>
                 {% endif %}
 
               <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Login</button>
+                <button type="submit">{% trans "Login" %}</button>
               </form>
         </header>
+
+        <div>
+            <h2>{% trans "No account yet" %}?</h2>
+            <a href="/register">{% trans "Register here"! %}</a>
+        </div>
 
 {% endblock %}
