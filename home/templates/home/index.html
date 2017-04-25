@@ -15,14 +15,21 @@
             <br/>
             <div class="row">
                 <div class="col-md-6 col-sm-6 hero-feature">
+                    {% if user.is_authenticated %}
                     <p><a href="/quiz/" class="btn btn-primary btn-large btn-block center">Quiz</a></p>
                     <p><a href="/wordbrowser/" class="btn btn-primary btn-large btn-block">{%  trans "Words" %}</a></p>
+                    {% else %}
+                    <p>{% blocktrans %}Log in or register to start learning german articles with quizes! It's free!{% endblocktrans %}</p>
+                    <p><a href="/register/" class="btn btn-primary btn-large btn-block center">{%  trans "Register" %}</a></p>
+                    <p><a href="/login/" class="btn btn-primary btn-large btn-block">{%  trans "Login" %}</a></p>
+                    <p>{% blocktrans %}Learn more about the project and author here:{% endblocktrans %} <a href="/about">{% trans "About" %}</a></p>
+                    {% endif %}
                 </div>
             </div>
         </header>
 
         <hr>
-
+{% comment %}
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
@@ -77,5 +84,6 @@
         <!-- /.row -->
 
         <hr>
+{% endcomment %}
 
 {% endblock %}

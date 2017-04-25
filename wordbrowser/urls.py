@@ -1,8 +1,8 @@
 from django.conf.urls import url
 from . import views
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^(?P<word_id>[0-9]+)/$', views.detail, name='detail'),
-    url(r'^lesson/(?P<word_id>[0-9]+)/$', views.lesson, name='lesson')
+    url(r'^$', login_required(views.index), name='index'),
+    url(r'^(?P<word_id>[0-9]+)/$', login_required(views.detail), name='detail'),
 ]
