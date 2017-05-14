@@ -20,7 +20,7 @@ class Word(models.Model):
 
     def save(self, *args, **kwargs):
         is_new = not self.id
-        super(Word, self).save(*args, *kwargs)
+        super(Word, self).save(*args, **kwargs)
         if is_new:
             art_question = ArticleQuestion(related_word_id=self, content=self.name, article=self.article, figure=self.figure)
             art_question.save()
