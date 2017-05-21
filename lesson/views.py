@@ -47,8 +47,12 @@ class QuizView(QuizTake):
             self.sitting.add_incorrect_question(self.question)
             progress.update_score(self.question, 0, 1)
 
-        self.previous = {}
-        #TODO fix problem with previous question result
+        self.previous = {'previous_answer': guess,
+                             'previous_outcome': is_correct,
+                             'previous_question': self.question,
+                             'answers': self.question.get_answers(),
+                             'question_type': {self.question
+                                               .__class__.__name__: True}}
 
         self.sitting.add_user_answer(self.question, guess)
         self.sitting.remove_first_question()

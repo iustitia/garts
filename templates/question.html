@@ -31,38 +31,58 @@ function recalculate_progress(q, n){
     </div>
 </div>
 
+
 {% if previous.answers %}
 
-<div id="previous_div">
-  <p class="muted"><small>{% trans "The previous question" %}:</small></p>
-  <p>{{ previous.previous_question }}</p>
+<div id="previous_div" class="container">
+    <div class="row text-center">
+    <header class="jumbotron hero-spacer">
 
-    <div
-  {% if previous.previous_outcome %}
-	 class="alert alert-success">
-  {% else %}
-	 class="alert alert-warning">
-  {% endif %}
-  	  <p><small>
-		{% trans "Your answer was" %} </small>
-		<strong>
-		  {{ previous.previous_outcome|yesno:"correct,incorrect" }}
-		</strong>
-	  </p>
+        <h1 class="lead">{{ previous.previous_question }}</h1>
 
-	<div/>
+        {% if previous.previous_question.figure %}
+        <img src="{{ question.figure.url }}" alt="{{ question.content }}" />
+        {% endif %}
 
-    <button onclick="removeAns()">Next question</button>
-	<hr>
+        <div class="form-group">
+        {% for answer in previous.answers %}
+          <a class="btn btn-lg {% if answer.correct %}btn-success{% elif previous.previous_outcome %}btn-default{% else %}btn-danger{% endif %}">
+            {{ answer.content }}
+          </a>
+        {% endfor %}
+        </div>
+
+        <div
+      {% if previous.previous_outcome %}
+         class="alert alert-success">
+      {% else %}
+         class="alert alert-warning">
+      {% endif %}
+
+          <p><small>
+            {% trans "Your answer was" %} </small>
+            <strong>
+              {{ previous.previous_outcome|yesno:"correct,incorrect" }}
+            </strong>
+          </p>
+
+        </div>
+
+        <button onclick="removeAns()">Next question</button>
+    </header>
+    </div>
 </div>
 {% endif %}
 
+
 {% if question %}
-<div class="container">
+<div class="container" {% if previous.answers %} id="next" style="visibility: hidden;" {% endif %}>
 <div class="row text-center">
 <header class="jumbotron hero-spacer">
+
     {% if previous.answers %}
-        <div id="next" style="visibility: hidden;">
+        <div id="next2">
+
     {% endif %}
 
     <h1 class="lead">{{ question.content }}</h1>
@@ -85,14 +105,13 @@ function recalculate_progress(q, n){
             <input type="submit" value={% trans "Check" %} class="btn btn-large btn-primary" onclick="recalculate_progress({{ progress.0|add:1 }}, {{ progress.1 }})">
         </div>
     </form>
+
+    {% if previous.answers %}
+    </div>
+        {% endif %}
 </header>
 </div>
 </div>
 {% endif %}
-
-        {% if previous.answers %}
- </div>
-        {% endif %}
-
 
 {% endblock %}

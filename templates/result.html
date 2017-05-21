@@ -35,7 +35,7 @@
     <hr>
   {% endif %}
   <hr>
-
+{% if False %}
   {% if previous.answers %}
 
   <p>{{ previous.previous_question }}</p>
@@ -44,8 +44,10 @@
 	  {{ previous.previous_outcome|yesno:"correct,incorrect" }}
 	</strong>
   </p>
+
   {% include 'correct_answer.html' %}
-  <hr>
+{% endif %}
+<hr>
 
   {% endif %}
 
