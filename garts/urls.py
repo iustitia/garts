@@ -46,8 +46,9 @@ urlpatterns += i18n_patterns(
     url(r'^wordbrowser/', include('wordbrowser.urls')),
     url(r'', include('lesson.urls')),
     url(r'^quiz/', include(quiz_urls)),
+    url(r'demo', view=QuizView.as_view(), name='demo', kwargs={'quiz_name': 'demo'}),
     url(r'^login', auth_views.login, name='login'),
     url(r'^logout', auth_views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^register/', register),
-    url(r'^accounts/', include('django.contrib.auth.urls'))
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 )

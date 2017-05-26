@@ -16,6 +16,28 @@
     <p class="lead">
         {% trans "You answered" %} {{ score }} {% trans "questions correctly out of" %} {{ max_score }}, {% trans "giving you" %} {{ percent }} {% trans "percent correct" %}
     </p>
+
+    {% if not user.is_authenticated %}
+
+    <div class="jumbotron">
+        <p>This is just a demo. If you like it, register and learn all the articles!</p>
+        <p>It's free!</p>
+
+
+
+        <div>
+            <h2>{% trans "No account yet" %}?</h2>
+            <a class="btn btn-default" href="/register">{% trans "Register here" %}!</a>
+        </div>
+
+        <div>
+            <h2>{% trans "Forgot your password" %}?</h2>
+            <a class="btn btn-default" href="/accounts/password_reset/">{% trans "Reset password" %}</a>
+        </div>
+    </div>
+
+    {% endif %}
+
     <br/>
     <div class="input-group">
         <span class="input-group-addon btn-success btn-large"><i class="fa fa-check"></i></span>
